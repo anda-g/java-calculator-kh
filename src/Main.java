@@ -1,3 +1,5 @@
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -196,6 +198,11 @@ public class Main extends JPanel implements ActionListener{
     }
 
     public static void main(String[] args) {
+        try{
+            UIManager.setLookAndFeel(new FlatMacLightLaf());
+        }catch (UnsupportedLookAndFeelException e){
+            throw new RuntimeException(e);
+        }
         new Main();
     }
 }
